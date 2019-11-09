@@ -1,0 +1,27 @@
+// bootstrap grid
+@import './bootstrap/bootstrap.scss';
+// end bootstrap grid
+
+@import "vars";
+@import "header";
+@import "homepage";
+@import "archive";
+@import "category";
+@import "footer";
+
+.page-container {
+  padding: $content-padding-page;
+}
+.page__content {
+  margin-top: $inner-content-margin;
+}
+.btn {
+  padding: $btn-padding;
+  background: $btn-default-bg;
+  font-size: $btn-font-size;
+  font-weight: $btn-font-weight;
+}
+.btn-primary {
+  background: $primary-color;
+  color: #000;
+}

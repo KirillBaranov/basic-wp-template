@@ -1,0 +1,35 @@
+header {
+  padding: $header-padding;
+  background: $header-bg-color;
+}
+nav {
+  li {
+    list-style: none;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+.nav-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+.nav__header {
+  li {
+    margin-left: 15px;
+  }
+  a {
+    color: $header-link-color;
+    transition: $fast-transition;
+    &:hover {
+      color: $header-hover-link-color;
+      text-decoration: none;
+    }
+  }
+}
+.current-menu-item {
+  a {
+    color: $header-active-link-color;
+  }
+}

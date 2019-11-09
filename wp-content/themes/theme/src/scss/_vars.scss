@@ -1,0 +1,28 @@
+// Basic colors
+$primary-color  : #ffffff;
+$secondary-color: #000;
+
+// Fonts style
+$primary-font  : 'Roboto';
+$secondary-font: 'Arial';
+
+// Buttons style
+$btn-default-bg : #ccc;
+$btn-padding    : 6px 13px 8px 13px;
+$btn-font-size  : 14px;
+$btn-font-weight: 400;
+$btn-color      : #000;
+
+// Header and navigation styles
+$header-bg-color         : #FF008A;
+$header-padding          : 30px 0;
+$header-link-color       : rgba( #ffffff, .6 );
+$header-hover-link-color : #ffffff;
+$header-active-link-color: #ffffff;
+
+// Basic transitions
+$fast-transition: all .1s ease-in-out;
+
+// Basic styles for pages
+$content-padding-page: 70px 0 100px 0;
+$inner-content-margin: 30px;
