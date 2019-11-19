@@ -11,13 +11,13 @@
 </head>
 <body>
 
-<header>
+<header id="header">
     <div class="container">
         <div class="row justify-content-between">
-            <a href="/" class="d-block col-2 header__logo">
+            <a href="/" class="d-block col-1 header__logo">
                 <img width="81" height="31" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/logo.png" alt="Логотип norma-a3">
             </a>
-            <div class="col d-xl-flex d-lg-flex d-none justify-content-end align-items-center">
+            <div class="col d-xl-flex d-none justify-content-end align-items-center">
                 <?php $args = array(
                     'theme_location' => 'top',
                     'container'=> 'nav',
@@ -30,7 +30,7 @@
                 ?>
                 <a href="tel:79991890987" class="btn btn-primary header__tel">7 999 189 09 87</a>
             </div>
-            <div class="col-1 justify-content-end align-items-center d-flex d-xl-none d-lg-none">
+            <div class="col-1 justify-content-end align-items-center d-flex d-xl-none">
                 <div class="cake">
                     <div class="cake__line"></div>
                     <div class="cake__line"></div>

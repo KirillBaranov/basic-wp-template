@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="homepage page-container">
+<main class="homepage">
     <section class="homepage__screen full-screen">
         <div class="container">
             <div class="row">
@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 offset-4 d-flex justify-content-center">
+                <div class="col-4 offset-4 d-flex justify-content-center" id="try-free">
                     <div class="form__get-request">
                         <div class="form-control">
                             <input type="text" class="form__input" placeholder="Введите имя">
@@ -29,7 +29,7 @@
                             <input type="text" class="form__input" placeholder="+7 999 189 09 87">
                         </div>
                         <div class="form-control">
-                            <button type="text" class="form__button">Начать бесплатно</button>
+                            <button type="text" class="form__button font-regular">Начать бесплатно</button>
                         </div>
                     </div>
                 </div>
@@ -39,18 +39,18 @@
     <section class="why-us-screen full-screen">
         <div class="container">
             <div class="row">
-                <div class="col-xl-8 offset-xl-2">
+                <div class="col-xl-8 offset-xl-2 transormation-screen">
                     <div class="mock-up">
                         <!-- Inject here other mock up -->
                     </div>
                 </div>
-                <div class="col-xl-1 d-flex justify-content-center">
-                    <div class="pen__scroller">
+                <div class="col-xl-1 d-flex justify-content-center transormation-screen">
+                    <a href="#why-us" class="pen__scroller lazy-scroll">
                         <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/pen.png" alt="Скролл на один экран">
-                    </div>
+                    </a>
                 </div>
             </div>
-            <div class="row why-us__title">
+            <div class="row why-us__title" id="why-us">
                 <div class="col-12 text-center">
                     <h3 class="homepage__title lighten-color">Почему мы?</h3>
                 </div>
@@ -150,7 +150,7 @@
                             <input type="text" class="input__form-try" placeholder="+7 999 189 09 87">
                         </div>
                         <div class="form-control">
-                            <button type="text" class="input__form-try">Оценить свой банк бесплатно</button>
+                            <button type="text" class="input__form-try font-regular">Оценить свой банк бесплатно</button>
                         </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
         </div>
     </section>
 
-    <section class="additional-info lighten-block">
+    <section class="additional-info lighten-block" id="plus">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 info__img" style="background: url('<?= get_stylesheet_directory_uri(); ?>/dist/img/default.png') no-repeat;">
@@ -182,7 +182,7 @@
             </div>
         </div>
     </section>
-    <section class="additional-info info-odd darken-block">
+    <section class="additional-info info-odd darken-block overflow-y-hidden">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6">
@@ -196,7 +196,7 @@
                     </div>
                 </div>
                 <div class="col-xl-6">
-                    <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/mobile.png" alt="Как уберечься от рисков? Иллюстрация">
+                    <img class="parallax" data-direction="top" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/mobile.png" alt="Как уберечься от рисков? Иллюстрация">
                 </div>
             </div>
         </div>
@@ -224,7 +224,7 @@
         </div>
     </section>
 
-    <section class="relation-questions">
+    <section class="relation-questions" id="questions">
         <div class="container">
             <div class="row text-center">
                 <div class="col-12">
@@ -232,42 +232,22 @@
                 </div>
             </div>
             <div class="row questions__container">
-                <div class="col-xl-4 block-question">
-                    <p class="title-question">Насколько надежные результаты расчета?</p>
-                    <div class="content__question">
-                        Надежность результатов – выше 82%, потому что используются проверенные данные, полученные от ЦБ России.
-                    </div>
-                </div>
-                <div class="col-xl-4 block-question">
-                    <p class="title-question">Насколько надежные результаты расчета?</p>
-                    <div class="content__question">
-                        Надежность результатов – выше 82%, потому что используются проверенные данные, полученные от ЦБ России.
-                    </div>
-                </div>
-                <div class="col-xl-4 block-question">
-                    <p class="title-question">Насколько надежные результаты расчета?</p>
-                    <div class="content__question">
-                        Надежность результатов – выше 82%, потому что используются проверенные данные, полученные от ЦБ России.
-                    </div>
-                </div>
-                <div class="col-xl-4 block-question">
-                    <p class="title-question">Насколько надежные результаты расчета?</p>
-                    <div class="content__question">
-                        Надежность результатов – выше 82%, потому что используются проверенные данные, полученные от ЦБ России.
-                    </div>
-                </div>
-                <div class="col-xl-4 block-question">
-                    <p class="title-question">Насколько надежные результаты расчета?</p>
-                    <div class="content__question">
-                        Надежность результатов – выше 82%, потому что используются проверенные данные, полученные от ЦБ России.
-                    </div>
-                </div>
-                <div class="col-xl-4 block-question">
-                    <p class="title-question">Насколько надежные результаты расчета?</p>
-                    <div class="content__question">
-                        Надежность результатов – выше 82%, потому что используются проверенные данные, полученные от ЦБ России.
-                    </div>
-                </div>
+                <?php $args = array(
+                    'post_type'    => 'questions',
+                    'numbersposts' => 6
+                );
+
+                $query = new WP_Query( $args );
+
+                if ( $query->have_posts() ) {
+                    while ( $query->have_posts() ) {
+                        $query->the_post();
+
+                        get_template_part('/templates/loop', 'questions');
+                    }
+                }
+
+                ?>
             </div>
         </div>
     </section>
@@ -299,7 +279,7 @@
                             <textarea type="text" class="questions__textarea" onresize="" placeholder="Введите ваш вопрос"></textarea>
                         </div>
                         <div class="form-control d-flex justify-content-center">
-                            <button type="text" class="questions__button">Узнать ответ на мой вопрос</button>
+                            <button type="text" class="questions__button font-regular">Узнать ответ на мой вопрос</button>
                         </div>
                     </div>
                 </div>

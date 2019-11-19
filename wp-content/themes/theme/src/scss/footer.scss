@@ -1,4 +1,5 @@
 footer {
+  margin-top: 135px;
   background: #131313;
   padding: 46px 0 99px 0;
   color: #FFFFFF;
@@ -12,10 +13,13 @@ footer {
 }
 .footer__menu {
   margin: 0;
-  padding-inline-start: 0px;
+  padding-inline-start: 0;
   li {
     list-style: none;
     margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
     &::before {
       position: relative;
       content: url("/wp-content/themes/theme/dist/img/foo-menu.png");

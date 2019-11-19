@@ -12,11 +12,17 @@
 
             <div class="col-xl-3">
                 <p class="footer__title">Навигация на сайте</p>
-                <ul class="footer__menu">
-                    <li><a href="mailto:norma-a3@mail.ru">Почему мы</a></li>
-                    <li><a href="tel:89991878712">Наши преимущества</a></li>
-                    <li><a href="tel:89991878712">Часто задаваемые вопросы</a></li>
-                </ul>
+
+                <?php $args = array(
+                    'theme_location' => 'bottom',
+                    'container'=> 'nav',
+                    'menu_id' => 'top-nav-ul',
+                    'items_wrap' => '<ul id="%1$s" class="footer__menu">%3$s</ul>',
+                    'menu_class' => ' -menu',
+                    'walker' => new bootstrap_menu(true)
+                );
+                wp_nav_menu($args);
+                ?>
             </div>
             <div class="col-xl-3">
                 <p class="footer__title">Социальные сети</p>
@@ -41,7 +47,7 @@
                         <input type="text" class="form__input darken-input" placeholder="+7 999 189 09 87">
                     </div>
                     <div class="form-control">
-                        <button type="text" class="form__button">30 дней бесплатно</button>
+                        <button type="text" class="form__button font-regular">30 дней бесплатно</button>
                     </div>
                 </div>
             </div>

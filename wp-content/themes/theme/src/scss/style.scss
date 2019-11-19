@@ -48,6 +48,15 @@
   background: #141414;
   color: #ffffff;
 }
+.font-regular {
+  font-weight: 400;
+}
+.parallax {
+  transform: translateY(300px);
+}
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
 input {
   border: 1px solid #141414;
   box-sizing: border-box;

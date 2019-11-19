@@ -42,6 +42,9 @@
   top: 63px;
   animation: pen linear 1s forwards;
 }
+.transormation-screen {
+  transform: translateY(-35%);
+}
 @keyframes pen {
   0% {
     -webkit-transform: rotate(0deg);
@@ -77,7 +80,7 @@
   color: #FFFFFF;
 }
 .why-us__title {
-  margin-top: 110px;
+  margin-top: -110px;
   margin-bottom: 80px;
 }
 

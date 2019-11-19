@@ -12,6 +12,8 @@ register_nav_menus(array(
 	'bottom' => 'Внизу'
 ));
 
+require_once 'post-type.php';
+
 add_theme_support('post-thumbnails');
 set_post_thumbnail_size(250, 150);
 add_image_size('big-thumb', 400, 400, true);
