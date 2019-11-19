@@ -1,6 +1,10 @@
 header {
   padding: $header-padding;
   background: $header-bg-color;
+  position: sticky;
+  z-index: 1030;
+  width: 100%;
+  background: #FFFFFF;
 }
 nav {
   li {
@@ -17,7 +21,7 @@ nav {
 }
 .nav__header {
   li {
-    margin-left: 15px;
+    margin-left: 23px;
   }
   a {
     color: $header-link-color;
@@ -31,5 +35,26 @@ nav {
 .current-menu-item {
   a {
     color: $header-active-link-color;
+  }
+}
+.header__tel {
+  margin-left: 25px;
+  &:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+}
+
+.cake {
+  width: 22px;
+}
+.cake__line {
+  width: 22px;
+  height: 2px;
+  background: #000000;
+  border-radius: 4px;
+  margin: 2.5px 0;
+  &:nth-child(2) {
+    background: #FF7979;
   }
 }

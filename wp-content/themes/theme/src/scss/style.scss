@@ -1,4 +1,5 @@
 // bootstrap grid
+@import "fonts";
 @import './bootstrap/bootstrap.scss';
 // end bootstrap grid
 
@@ -8,6 +9,12 @@
 @import "archive";
 @import "category";
 @import "footer";
+@import "media";
+
+* {
+  //color: $font-color;
+  //font-family: Helvetica;
+}
 
 .page-container {
   padding: $content-padding-page;
@@ -16,12 +23,81 @@
   margin-top: $inner-content-margin;
 }
 .btn {
+  display: inline-block;
   padding: $btn-padding;
   background: $btn-default-bg;
   font-size: $btn-font-size;
   font-weight: $btn-font-weight;
+  border-radius: $btn-border-radius;
 }
 .btn-primary {
   background: $primary-color;
-  color: #000;
+  color: $btn-color;
+}
+.full-screen {
+  min-height: 100vh;
+  //max-height: 850px;
+}
+.primary-color {
+  color: $primary-color;
+}
+.lighten-color {
+  color: #ffffff;
+}
+.darken-block {
+  background: #141414;
+  color: #ffffff;
+}
+input {
+  border: 1px solid #141414;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 261px;
+  height: 41px;
+  text-align: center;
+  outline: none;
+  transition: .1s ease-in-out;
+  &:focus {
+    border: 1px solid rgba( #141414, .7 );
+  }
+  &::placeholder {
+    opacity: 1;
+    color: $font-color;
+  }
+}
+textarea {
+  border: 1px solid #141414;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 261px;
+  height: 82px;
+  min-height: 70px;
+  max-height: 160px;
+  text-align: center;
+  outline: none;
+  transition: .1s ease-in-out;
+  &:focus {
+    border: 1px solid rgba( #141414, .7 );
+  }
+  &::placeholder {
+    opacity: .7;
+    color: $font-color;
+  }
+}
+button {
+  width: 261px;
+  height: 41px;
+  background: $primary-color;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 }
