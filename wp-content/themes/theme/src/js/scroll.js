@@ -1,30 +1,14 @@
 $(document).ready(() => {
 
-    let flag = false;
-
     $('.lazy-scroll').click(function() {
 
-        if ( !flag ) {
-            let _href = $(this).attr("href");
+        let _href = $(this).attr("href");
 
-            $('html, body').animate({
-                scrollTop: ($(_href).offset().top + -100) +'px'
-            }, 1000);
+        $('html, body').animate({
+            scrollTop: ($(_href).offset().top - 300 ) +'px'
+        }, 1000);
 
-            return false;
-        }
-
-        else {
-            let _href = $(this).attr("href");
-
-            $('html, body').animate({
-                scrollTop: $(_href).offset().top +'px'
-            }, 1000);
-
-            return false;
-        }
-
-        flag = !flag;
+        return false;
 
     });
 
@@ -39,7 +23,7 @@ $(document).ready(() => {
     });
 
 
-    const offsetToItem = $('.parallax').offset().top - $(window).height()  / 1.2;
+    const offsetToItem = $('.parallax').offset().top - $(window).height() / 2;
 
     $(window).scroll(() => {
         const elems = $('.parallax');
@@ -48,7 +32,7 @@ $(document).ready(() => {
 
     function lettersAnimation( elems, direction = 'top' ) {
         const scrollToTop  = $(window).scrollTop();
-        const maxScroll    = 600;
+        const maxScroll    = 300;
 
         $( elems ).each(function () {
             const elem = $(this);

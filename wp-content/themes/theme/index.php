@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 offset-4 d-flex justify-content-center" id="try-free">
+                <div class="col-12 col-xl-4 offset-xl-4 offset-0 d-flex justify-content-center" id="try-free">
                     <div class="form__get-request">
                         <div class="form-control">
                             <input type="text" class="form__input" placeholder="Введите имя">
@@ -39,15 +39,13 @@
     <section class="why-us-screen full-screen">
         <div class="container">
             <div class="row">
-                <div class="col-xl-8 offset-xl-2 transormation-screen">
-                    <div class="mock-up">
-                        <!-- Inject here other mock up -->
+                <div class="col-12 col-xl-8 col-lg-9 offset-xl-2 offset-lg-1 offset-0 transformation-screen">
+                    <div class="mock-up position-relative">
+                        <img class="full-width" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/mock-up.png" alt="Мокап статистики">
+                        <a href="#why-us" class="pen__scroller lazy-scroll">
+                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/pen.png" alt="Скролл на один экран">
+                        </a>
                     </div>
-                </div>
-                <div class="col-xl-1 d-flex justify-content-center transormation-screen">
-                    <a href="#why-us" class="pen__scroller lazy-scroll">
-                        <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/pen.png" alt="Скролл на один экран">
-                    </a>
                 </div>
             </div>
             <div class="row why-us__title" id="why-us">
@@ -116,9 +114,9 @@
     <section class="try-product">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-xl-6">
-                    <div class="container__timer">
-                        <p class="homepage__title">Хотите проверить, как это работает?</p>
+                <div class="col-xl-6 col-lg-7 col-12 col-md-10 offset-md-1 offset-xl-0 offset-lg-0">
+                    <div class="container__timer text-center">
+                        <p class="homepage__title" style="max-width: 463px;">Хотите проверить, как это работает?</p>
                         <div class="timer__description text-center">
                             Оставьте заявку сейчас и оцените свой банк бесплатно
                         </div>
@@ -154,8 +152,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6">
-                    <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/mac-mock-up.png" alt="Статистика продукта">
+                <div class="col-xl-6 col-lg-5 d-none d-xl-block d-lg-block">
+                    <img class="full-width" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/mac-mock-up.png" alt="Статистика продукта">
                 </div>
             </div>
         </div>
@@ -196,7 +194,7 @@
                     </div>
                 </div>
                 <div class="col-xl-6">
-                    <img class="parallax" data-direction="top" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/mobile.png" alt="Как уберечься от рисков? Иллюстрация">
+                    <img class="parallax full-width" data-direction="top" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/mobile.png" alt="Как уберечься от рисков? Иллюстрация">
                 </div>
             </div>
         </div>
@@ -264,7 +262,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-6 offset-3">
+                <div class="col-xl-6 col-lg-8 col-md-10 col-12 offset-0 offset-xl-3 offset-lg-2 offset-md-1 offset-0">
                     <div class="have-questions__form">
                         <div class="form-control d-flex justify-content-center">
                             <input type="text" class="questions__input" placeholder="Введите имя">

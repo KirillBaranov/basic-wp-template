@@ -33,17 +33,18 @@
 .mock-up {
   max-width: 716px;
   width: 100%;
-  height: 549px;
-  background: url('/wp-content/themes/theme/dist/img/mock-up.png') no-repeat;
+  height: auto;
   background-size: cover;
 }
 .pen__scroller {
-  position: relative;
-  top: 63px;
+  position: absolute;
+  top: 20px;
+  right: -80px;
   animation: pen linear 1s forwards;
+  z-index: -1;
 }
-.transormation-screen {
-  transform: translateY(-35%);
+.transformation-screen {
+  transform: translateY(-20%);
 }
 @keyframes pen {
   0% {
@@ -91,7 +92,8 @@
 }
 .timer {
   padding: 6px 8px 6px 6px;
-  width: 465px;
+  max-width: 465px;
+  width: 100%;
   height: 82px;
   background: #141414;
   border-radius: 8px;

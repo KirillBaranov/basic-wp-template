@@ -1,3 +1,10 @@
+@media (max-width: 1200px) {
+  .pen__scroller {
+    top: -120px;
+    right: 30px;
+  }
+}
+
 @media (max-width: 991px) {
   .homepage__title {
     font-size: 28px;
@@ -9,8 +16,13 @@
     margin-bottom: 37px;
   }
 }
+
 @media (max-width: 768px) {
   .homepage__screen {
     padding-top: 240px;
   }
+}
+
+@media (max-width: 576px) {
+
 }

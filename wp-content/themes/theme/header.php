@@ -28,7 +28,7 @@
                 );
                 wp_nav_menu($args);
                 ?>
-                <a href="tel:79991890987" class="btn btn-primary header__tel">7 999 189 09 87</a>
+                <button class="btn btn-primary header__btn">Попробовать бесплатно</button>
             </div>
             <div class="col-1 justify-content-end align-items-center d-flex d-xl-none">
                 <div class="cake">
