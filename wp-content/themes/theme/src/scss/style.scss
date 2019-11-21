@@ -10,6 +10,7 @@
 @import "category";
 @import "footer";
 @import "media";
+@import "animation";
 
 
 body {
@@ -110,5 +111,38 @@ button {
   cursor: pointer;
   &:focus {
     outline: none;
+  }
+}
+
+// Is not valide fields
+.is-not-valide {
+  transition: all .3s ease-in-out;
+  border: 1px solid red;
+  position: relative;
+  &::placeholder {
+    color: red;
+  }
+  &:focus {
+    border: 1px solid red;
+  }
+}
+.bounce {
+  animation: bounce .3s ease-in-out forwards;
+}
+@keyframes bounce {
+  from {
+    left: 0;
+  }
+  25% {
+    left: 2px;
+  }
+  50% {
+    left: 0;
+  }
+  75% {
+    left: -2px;
+  }
+  to {
+    left: 0;
   }
 }

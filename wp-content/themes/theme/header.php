@@ -14,7 +14,7 @@
 <header id="header">
     <div class="container">
         <div class="row justify-content-between">
-            <a href="/" class="d-block col-1 header__logo">
+            <a href="/" class="d-block col-1 header__logo animate-instanse">
                 <img width="81" height="31" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/logo.png" alt="Логотип norma-a3">
             </a>
             <div class="col d-xl-flex d-none justify-content-end align-items-center">
@@ -22,13 +22,13 @@
                     'theme_location' => 'top',
                     'container'=> 'nav',
                     'menu_id' => 'top-nav-ul',
-                    'items_wrap' => '<ul id="%1$s" class="nav-row nav__header">%3$s</ul>',
-                    'menu_class' => 'top-menu',
+                    'items_wrap' => '<ul id="%1$s" class="nav-row animate-instanse nav__header">%3$s</ul>',
+                    'menu_class' => 'animate-instanse',
                     'walker' => new bootstrap_menu(true)
                 );
                 wp_nav_menu($args);
                 ?>
-                <button class="btn btn-primary header__btn">Попробовать бесплатно</button>
+                <button class="btn btn-primary header__btn animate-instanse">Попробовать бесплатно</button>
             </div>
             <div class="col-1 justify-content-end align-items-center d-flex d-xl-none">
                 <div class="cake">

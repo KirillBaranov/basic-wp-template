@@ -99,7 +99,8 @@ if (!function_exists('add_scripts')) {
 	    if(is_admin()) return false;
 	    wp_deregister_script('jquery');
 	    wp_enqueue_script('jquery',get_template_directory_uri() . '/dist/libs/jquery.min.js','','',true);
-	    wp_enqueue_script('main', get_template_directory_uri() . '/dist/bundle.js','','',true);
+		wp_enqueue_script('mask',get_template_directory_uri() . '/dist/libs/jquery.mask.min.js','','',true);
+		wp_enqueue_script('main', get_template_directory_uri() . '/dist/bundle.js','','',true);
 	}
 }
 

@@ -1,3 +1,5 @@
+$header-transition: 1s ease-in-out;
+
 header {
   padding: $header-padding;
   background: $header-bg-color;
@@ -6,6 +8,11 @@ header {
   width: 100%;
   background: #FFFFFF;
 }
+.nav__header {
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: $header-transition;
+}
 nav {
   li {
     list-style: none;
@@ -13,6 +20,11 @@ nav {
       text-decoration: none;
     }
   }
+}
+.header__logo {
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: $header-transition;
 }
 .nav-row {
   display: flex;
@@ -40,6 +52,9 @@ nav {
 .header__btn {
   margin-left: 25px;
   width: 182px;
+  transition: $header-transition;
+  transform: translateX(30px);
+  opacity: 0;
   &:hover {
     text-decoration: none;
     color: #FFFFFF;
