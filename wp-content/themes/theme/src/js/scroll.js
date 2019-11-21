@@ -32,7 +32,7 @@ $(document).ready(() => {
 
     function lettersAnimation( elems, direction = 'top' ) {
         const scrollToTop  = $(window).scrollTop();
-        const maxScroll    = 300;
+        const maxScroll    = 1000;
 
         $( elems ).each(function () {
             const elem = $(this);

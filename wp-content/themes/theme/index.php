@@ -159,22 +159,19 @@
         </div>
     </section>
 
-    <section class="additional-info lighten-block" id="plus">
+    <section class="additional-info position-relative lighten-block" id="plus">
+        <div class="left-thumbnail-associated" style="background: url('<?= get_stylesheet_directory_uri(); ?>/dist/img/default.png') no-repeat;"></div>
         <div class="container">
             <div class="row">
-                <div class="col-xl-12 info__img" style="background: url('<?= get_stylesheet_directory_uri(); ?>/dist/img/default.png') no-repeat;">
-                    <div class="row">
-                        <div class="col-xl-6 offset-xl-6">
-                            <p class="homepage__title">Боитесь дефолта банка?</p>
-                            <div class="info__description">
-                                От дефолта не застрахована ни одна финансовая организация.
-                                Экономическая нестабильность государства влияет на платежеспособность банков –
-                                незастрахованные вклады могут превратиться в пустые цифры, купленные облигации – в
-                                бесполезную бумагу. Для клиента, полагающегося на стабильность организации, дефолт
-                                обернется полной потерей капиталовложений,
-                                обвалом бизнеса, привязанного к счетам в банке, потерей работы.
-                            </div>
-                        </div>
+                <div class="col-xl-6 offset-xl-6">
+                    <p class="homepage__title">Боитесь дефолта банка?</p>
+                    <div class="info__description">
+                        От дефолта не застрахована ни одна финансовая организация.
+                        Экономическая нестабильность государства влияет на платежеспособность банков –
+                        незастрахованные вклады могут превратиться в пустые цифры, купленные облигации – в
+                        бесполезную бумагу. Для клиента, полагающегося на стабильность организации, дефолт
+                        обернется полной потерей капиталовложений,
+                        обвалом бизнеса, привязанного к счетам в банке, потерей работы.
                     </div>
                 </div>
             </div>

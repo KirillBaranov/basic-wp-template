@@ -127,6 +127,7 @@
   max-width: 463px;
   margin: 23px 0 37px 0;
 }
+
 .input__form-try {
   max-width: 465px;
   width: 100%;
@@ -147,6 +148,17 @@
 }
 .block-question {
   margin-bottom: 96px;
+}
+.additional-info {
+  min-height: 400px;
+  padding: 80px 0;
+}
+.left-thumbnail-associated {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 400px;
+  width: 1000px;
 }
 .title-question {
   font-family: Oswald;
