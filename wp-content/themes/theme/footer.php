@@ -1,7 +1,7 @@
 <footer>
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-xl-3">
+            <div class="col-xl-3 col-12 order-2 order-xl-1">
                 <p class="footer__title">Контактная информация</p>
                 <ul class="footer__menu">
                     <li class="footer__icon"><a href="mailto:norma-a3@mail.ru">norma-a3@mail.ru</a></li>
@@ -10,7 +10,7 @@
                 </ul>
             </div>
 
-            <div class="col-xl-3">
+            <div class="col-xl-3 col-12 order-3 order-xl-2">
                 <p class="footer__title">Навигация на сайте</p>
 
                 <?php $args = array(
@@ -24,16 +24,8 @@
                 wp_nav_menu($args);
                 ?>
             </div>
-            <div class="col-xl-3">
-                <p class="footer__title">Социальные сети</p>
-                <ul class="footer__menu">
-                    <li><a href="mailto:norma-a3@mail.ru">Vk.com</a></li>
-                    <li><a href="tel:89991878712">Facebook</a></li>
-                    <li>Instagram</li>
-                </ul>
-            </div>
-            <div class="col-xl-3">
-                <div class="text-center">
+            <div class="col-xl-3 col-12 offset-xl-3 offset-0 order-1 order-xl-3">
+                <div class="text-xl-center">
                     <p class="footer-form__title">Попробовать бесплатно</p>
                 </div>
                 <div class="form__get-request">

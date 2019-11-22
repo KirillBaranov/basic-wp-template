@@ -31,7 +31,8 @@
                 <button class="btn btn-primary header__btn animate-instanse">Попробовать бесплатно</button>
             </div>
             <div class="col-1 justify-content-end align-items-center d-flex d-xl-none">
-                <div class="cake">
+                <div class="cake position-relative">
+                    <div class="background-menu d-block d-xl-none"></div>
                     <div class="cake__line"></div>
                     <div class="cake__line"></div>
                     <div class="cake__line"></div>

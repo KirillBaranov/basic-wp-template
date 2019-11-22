@@ -7,6 +7,9 @@
   .why-us__title {
     margin-top: 0;
   }
+  .footer__title {
+    margin-top: 45px;
+  }
 }
 @media (max-width: 1200px) {
   .pen__scroller {
@@ -34,6 +37,13 @@
     input, button, textarea {
       display: block;
       margin: 0 auto;
+    }
+  }
+  footer {
+    .form-control {
+      input, button {
+        margin: 0;
+      }
     }
   }
 }
