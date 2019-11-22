@@ -3,6 +3,11 @@
     transform: translateY(-50%);
   }
 }
+@media (max-width: 1280px) {
+  .why-us__title {
+    margin-top: 0;
+  }
+}
 @media (max-width: 1200px) {
   .pen__scroller {
     top: -120px;
@@ -40,5 +45,13 @@
 }
 
 @media (max-width: 576px) {
-
+  .left-thumbnail-associated {
+    display: none;
+  }
+  .parallax {
+    display: none;
+  }
+  .info__img {
+    display: none;
+  }
 }

@@ -40,7 +40,7 @@ $(document).ready(() => {
 
             if ( scrollToTop >= offsetToItem ) {
 
-                let translateY = scrollToTop - offsetToItem;
+                let translateY = (scrollToTop - offsetToItem) * 0.4;
                 let opacity    = 1 - (translateY / maxScroll) * 0.8;
 
                 if ( translateY > maxScroll ) {
@@ -49,13 +49,13 @@ $(document).ready(() => {
 
                 if ( direction === 'top' ) {
                     elem.css({
-                        transform: `translateY(-${translateY * 0.5}px)`,
+                        transform: `translateY(-${translateY}px)`,
                     })
                 }
 
                 else {
                     elem.css({
-                        transform: `translateY(${translateY * 0.5}px)`,
+                        transform: `translateY(${translateY}px)`,
                     })
                 }
 
