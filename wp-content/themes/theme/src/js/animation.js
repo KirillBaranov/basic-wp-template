@@ -1,22 +1,28 @@
 $(document).ready(() => {
-    const line = $('.cake__line');
     const cake = $('.cake');
-    const bg   = $('.background-menu');
+    window.isOpen = false;
 
-    let isOpen = false;
     cake.click(() => {
-
-        if ( isOpen ) {
-            line.removeClass('active-menu');
-            bg.removeClass('active-menu-bg');
-        }
-
-        else {
-            line.addClass('active-menu');
-            bg.addClass('active-menu-bg');
-        }
-
-        isOpen = !isOpen;
-
+        window.hideOrOpenMenu();
     });
 });
+
+window.hideOrOpenMenu = () => {
+    const line = $('.cake__line');
+    const bg   = $('.background-menu');
+    const menu = $('.mobile-menu');
+
+    if ( window.isOpen ) {
+        line.removeClass('active-menu');
+        menu.removeClass('active-mobile-menu');
+        bg.removeClass('active-menu-bg');
+    }
+
+    else {
+        line.addClass('active-menu');
+        menu.addClass('active-mobile-menu');
+        bg.addClass('active-menu-bg');
+    }
+
+    window.isOpen = !window.isOpen;
+};

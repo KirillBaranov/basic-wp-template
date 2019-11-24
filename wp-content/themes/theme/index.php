@@ -36,12 +36,27 @@
             </div>
         </div>
     </section>
-    <section class="why-us-screen full-screen">
+    <section class="why-us-screen full-screen darken-screen">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-xl-8 col-lg-9 offset-xl-2 offset-lg-1 offset-0 transformation-screen">
                     <div class="mock-up position-relative animate-instanse">
-                        <img class="full-width" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/mock-up.png" alt="Мокап статистики">
+                        <?php
+
+                        $query = new WP_Query( array( 'post_type' => 'mockup', 'numberposts' => 1, 'orderby' => 'date' ) );
+
+                        if ( $query->have_posts() ) {
+                            while ( $query->have_posts() ) {
+                                $query->the_post();
+
+                                $src = get_the_post_thumbnail_url( $post->ID, 'full' ); ?>
+
+                                <img class="full-width" src="<?= $src; ?>" alt="Мокап статистики">
+                            <? }
+                            wp_reset_postdata();
+                        }
+
+                        ?>
                         <a href="#why-us" class="pen__scroller lazy-scroll">
                             <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/pen.png" alt="Скролл на один экран">
                         </a>
@@ -150,7 +165,7 @@
                             <input type="text" class="input__form-try" placeholder="+7 999 189 09 87">
                         </div>
                         <div class="form-control">
-                            <button type="text" class="input__form-try font-regular">Оценить свой банк бесплатно</button>
+                            <button type="text" class="input__form-try font-regular" id="do-validate">Оценить свой банк бесплатно</button>
                         </div>
                     </div>
                 </div>
@@ -221,6 +236,45 @@
         </div>
     </section>
 
+    <section class="prognoses-firms">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h3 class="homepage__title animate">Как  оценивала Норма дефолтные банки</h3>
+                </div>
+                <div class="col-12">
+                    <div class="prognoses__homepage-subtitle">Вероятность дефолта до отзыва лицензии</div>
+                </div>
+            </div>
+            <div class="row bank__row">
+                <div class="col-xl-4 d-flex justify-content-start">
+                    <div class="bank__block danger-risk">
+                        <div class="bank__thumbnail">
+                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/bank1.png" alt="Миниатюра банка">
+                        </div>
+                        <div class="bank__btn-risk">Высокая вероятность дефолта</div>
+                    </div>
+                </div>
+                <div class="col-xl-4 d-flex justify-content-center">
+                    <div class="bank__block danger-risk">
+                        <div class="bank__thumbnail">
+                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/bank2.png" alt="Миниатюра банка">
+                        </div>
+                        <div class="bank__btn-risk">Высокая вероятность дефолта</div>
+                    </div>
+                </div>
+                <div class="col-xl-4 d-flex justify-content-end">
+                    <div class="bank__block warning-risk">
+                        <div class="bank__thumbnail">
+                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/bank3.png" alt="Миниатюра банка">
+                        </div>
+                        <div class="bank__btn-risk">Повышенная вероятность дефолта</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="relation-questions" id="questions">
         <div class="container">
             <div class="row text-center">
@@ -242,6 +296,8 @@
 
                         get_template_part('/templates/loop', 'questions');
                     }
+
+                    wp_reset_postdata();
                 }
 
                 ?>
@@ -280,6 +336,49 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-us">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h3 class="homepage__title animate">Кто мы?</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="about-us__subtitle animate">
+                        Наша команда – создатели сервиса НОРМА, который просчитывает вероятность неплатежеспособности,
+                        помогает клиентам уберечься от убытков и сохранить капитал. Каждый из участников совершенствует
+                        определенную часть программы – модели секторов, оценки и рейтинги, дорабатывает заключения,
+                        улучшает обработку 20 миллионов показателей, корректирует пользовательский интерфейс для удобства
+                        клиентов. Благодаря десятилетнему опыту в аналитике, нам удалось создать эффективный сервис
+                        по оценке банков с высоким уровнем вероятности, не имеющий аналогов, дающий наиболее
+                        развернутый и понятный результат по расчетам.
+                    </div>
+                </div>
+            </div>
+            <div class="row row__team">
+                <?php
+
+                $args = array(
+                    'post_type'   => 'team',
+                    'numberposts' => 3
+                );
+
+                $query = new WP_Query( $args );
+
+                if ( $query->have_posts() ) {
+                    while ( $query->have_posts() ) {
+                        $query->the_post();
+
+                        get_template_part( '/templates/loop', 'team' );
+                    }
+
+                    wp_reset_postdata();
+                } ?>
             </div>
         </div>
     </section>

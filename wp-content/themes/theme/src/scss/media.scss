@@ -8,13 +8,20 @@
     margin-top: 0;
   }
   .footer__title {
-    margin-top: 45px;
+    margin-top: 45px !important;
   }
 }
 @media (max-width: 1200px) {
   .pen__scroller {
     top: -120px;
     right: 30px;
+  }
+  .row__team {
+    .col-xl-4 {
+      .membership__block {
+        margin-top: 66px !important;
+      }
+    }
   }
 }
 
@@ -63,5 +70,8 @@
   }
   .info__img {
     display: none;
+  }
+  .homepage__screen {
+    padding-top: 100px;
   }
 }

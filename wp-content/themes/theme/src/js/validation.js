@@ -3,7 +3,7 @@ $(document).ready(() => {
     /**
      * Validation handlering form
      */
-    let send = $('.form__button, .input__form-try, .questions__button');
+    let send = $('.form__button, #do-validate, .questions__button');
 
     send.click(function () {
         let items = $(this).parent().parent().find('input');

@@ -15,6 +15,10 @@ $(document).ready(() => {
     $('nav').find('a').click(function() {
         let _href = $(this).attr("href");
 
+        if ( window.isOpen ) {
+            window.hideOrOpenMenu();
+        }
+
         $('html, body').animate({
             scrollTop: ($(_href).offset().top + -100) +'px'
         }, 2000);
@@ -28,7 +32,32 @@ $(document).ready(() => {
     $(window).scroll(() => {
         const elems = $('.parallax');
         lettersAnimation( elems );
+
+        changeHeaderColor();
     });
+
+    let currentDarkenScreen = 1;
+
+    function changeHeaderColor() {
+        const header       = $('header');
+        const darkenScreen = $('.darken-screen');
+        const headerHeight = header.height();
+        const scrollToTop  = $(window).scrollTop();
+
+            $.each( darkenScreen, function () {
+
+            const screen = $(this);
+
+            if ( scrollToTop >= screen.offset().top && scrollToTop <= screen.offset().top + screen.height() ) {
+                header.addClass('header-lighten');
+            }
+
+            else {
+                header.removeClass('header-lighten');
+            }
+
+        });
+    }
 
     function lettersAnimation( elems, direction = 'top' ) {
         const scrollToTop  = $(window).scrollTop();

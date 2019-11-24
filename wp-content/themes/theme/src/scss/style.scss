@@ -31,6 +31,12 @@ body {
   font-weight: $btn-font-weight;
   border-radius: $btn-border-radius;
 }
+.btn-white {
+  background: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+}
 .full-width {
   width: 100%;
 }

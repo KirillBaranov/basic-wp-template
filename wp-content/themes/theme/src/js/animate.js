@@ -16,9 +16,14 @@ $(document).ready(() => {
         }, delay);
 
     });
-
+    
+    checkAndAnimateIt();
 
     $(window).scroll( () => {
+        checkAndAnimateIt();
+    });
+    
+    function checkAndAnimateIt() {
         $.each( animateItems, function () {
             const item         = $(this);
             const scrollToItem = item.offset().top;
@@ -38,5 +43,5 @@ $(document).ready(() => {
             }
 
         });
-    })
+    }
 });

@@ -30,14 +30,34 @@
                 ?>
                 <button class="btn btn-primary header__btn animate-instanse">Попробовать бесплатно</button>
             </div>
-            <div class="col-1 justify-content-end align-items-center d-flex d-xl-none">
+            <div class="col-1 justify-content-end align-items-center d-flex d-xl-none position-relative">
                 <div class="cake position-relative">
-                    <div class="background-menu d-block d-xl-none"></div>
                     <div class="cake__line"></div>
                     <div class="cake__line"></div>
                     <div class="cake__line"></div>
                 </div>
+                <div class="background-menu d-block d-xl-none"></div>
             </div>
+            <nav class="mobile-menu">
+                <div class="container">
+                    <div class="d-flex flex-column align-items-end">
+                        <div class="btn btn-white btn-mobile">Попробовать бесплатно</div>
+
+                        <?php $args = array(
+                            'theme_location' => 'top',
+                            'container'=> false,
+                            'menu_id' => false,
+                            'items_wrap' => '<ul id="%1$s" class="menu-list">%3$s</ul>',
+                            'menu_class' => 'menu-list',
+                            'walker' => new bootstrap_menu(true)
+                        );
+                        wp_nav_menu($args);
+                        ?>
+
+                        <a href="tel:79991890987" class="mobile-menu__tel">7 999 189 09 87</a>
+                    </div>
+                </div>
+            </nav>
         </div>
     </div>
 </header>
