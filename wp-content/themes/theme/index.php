@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <main class="homepage">
+
     <section class="homepage__screen full-screen">
         <div class="container">
             <div class="row">
@@ -20,16 +21,16 @@
                 <div class="col-12 col-xl-4 offset-xl-4 offset-0 d-flex justify-content-center" id="try-free">
                     <div class="form__get-request">
                         <div class="form-control">
-                            <input type="text" class="form__input" placeholder="Введите имя">
+                            <input type="text" autocomplete="off" name="name" class="form__input fade-down animate-instanse" placeholder="Введите имя">
                         </div>
                         <div class="form-control">
-                            <input type="text" class="form__input" placeholder="E-mail адрес">
+                            <input type="email" autocomplete="off" name="email" class="form__input fade-down animate-instanse" placeholder="E-mail адрес">
                         </div>
                         <div class="form-control">
-                            <input type="text" class="form__input" placeholder="+7 999 189 09 87">
+                            <input type="tel" autocomplete="off" name="tel" class="form__input fade-down animate-instanse" placeholder="+7 999 189 09 87">
                         </div>
                         <div class="form-control">
-                            <button type="text" class="form__button font-regular">Начать бесплатно</button>
+                            <button type="text" class="form__button font-regular fade-down animate-instanse">Начать бесплатно</button>
                         </div>
                     </div>
                 </div>
@@ -43,7 +44,13 @@
                     <div class="mock-up position-relative animate-instanse">
                         <?php
 
-                        $query = new WP_Query( array( 'post_type' => 'mockup', 'numberposts' => 1, 'orderby' => 'date' ) );
+                        $args = array(
+                            'post_type' => 'mockup',
+                            'numberposts' => 1,
+                            'orderby' => 'date'
+                        );
+
+                        $query = new WP_Query( $args );
 
                         if ( $query->have_posts() ) {
                             while ( $query->have_posts() ) {
@@ -57,10 +64,11 @@
                         }
 
                         ?>
-                        <a href="#why-us" class="pen__scroller lazy-scroll">
-                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/pen.png" alt="Скролл на один экран">
-                        </a>
                     </div>
+                    <a href="#why-us" class="pen__scroller lazy-scroll fade-down animate-instanse">
+                        <img class="scroll-down__arrow" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/down-screen.png" alt="Вниз">
+                        <img class="pen-animate" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/pen.png" alt="Скролл на один экран">
+                    </a>
                 </div>
             </div>
             <div class="row why-us__title" id="why-us">
@@ -69,64 +77,30 @@
                 </div>
             </div>
             <div class="row">
-                <div class="why-us__block--animated animate col-xl-3 col-lg-3 col-md-6 col-12">
-                    <div class="why-us__block">
-                        <div class="block__icon">
-                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/icon1.png" alt="Вероятность дефолта">
-                        </div>
-                        <p class="block__title">Вероятность дефолта</p>
-                        <div class="block__description">
-                            Расчеты имеют вероятность выше 82%, так как
-                            основываются на реальных показателях с использованием
-                            20 миллионов значений.
-                        </div>
-                    </div>
-                </div>
 
-                <div class="why-us__block--animated animate col-xl-3 col-lg-3 col-md-6 col-12">
-                    <div class="why-us__block">
-                        <div class="block__icon">
-                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/icon2.png" alt="Вероятность дефолта">
-                        </div>
-                        <p class="block__title">Скорость</p>
-                        <div class="block__description">
-                            Преимущество сервиса – быстрая оценка без длительных ожиданий.
-                            Процесс расчета занимает меньше минуты
-                        </div>
-                    </div>
-                </div>
+                <?php $args = array(
+                    'numberposts' => 4,
+                    'post_type'   => 'why-us'
+                );
 
-                <div class="why-us__block--animated animate col-xl-3 col-lg-3 col-md-6 col-12">
-                    <div class="why-us__block">
-                        <div class="block__icon">
-                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/icon3.png" alt="Вероятность дефолта">
-                        </div>
-                        <p class="block__title">Оценка в два клика</p>
-                        <div class="block__description">
-                            Клиенту нужно ввести название финансовой организации,
-                            группы компаний и запустить анализ – далее программа
-                            проводит расчеты автоматически.
-                        </div>
-                    </div>
-                </div>
+                $query = new WP_Query( $args );
 
-                <div class="why-us__block--animated animate col-xl-3 col-lg-3 col-md-6 col-12">
-                    <div class="why-us__block">
-                        <div class="block__icon">
-                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/icon4.png" alt="Вероятность дефолта">
-                        </div>
-                        <p class="block__title">30 дней бесплатно</p>
-                        <div class="block__description">
-                            30 дней – бесплатный период, на протяжении которого клиент
-                            может удостовериться в правильности,
-                            объективности оценки вероятности дефолта банка.
-                        </div>
-                    </div>
-                </div>
+                if ( $query->have_posts() ) {
+                    while ( $query->have_posts() ) {
+                        $query->the_post();
+
+                        get_template_part( '/templates/loop', 'why-us' );
+                    }
+
+                    wp_reset_postdata();
+                }
+
+                ?>
+
             </div>
         </div>
     </section>
-    <section class="try-product">
+    <section class="try-product full-screen">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-7 col-12 col-md-10 offset-md-1 offset-xl-0 offset-lg-0">
@@ -156,16 +130,16 @@
                     </div>
                     <div class="form-get-request try-form">
                         <div class="form-control">
-                            <input type="text" class="input__form-try" placeholder="Введите имя">
+                            <input type="text" autocomplete="off" name="Имя" class="input__form-try inherit-bg fade-down animate" placeholder="Введите имя">
                         </div>
                         <div class="form-control">
-                            <input type="text" class="input__form-try" placeholder="E-mail адрес">
+                            <input type="email" autocomplete="off" name="Email адрес" class="input__form-try inherit-bg fade-down animate" placeholder="E-mail адрес">
                         </div>
                         <div class="form-control">
-                            <input type="text" class="input__form-try" placeholder="+7 999 189 09 87">
+                            <input type="tel" autocomplete="off" name="Телефон" class="input__form-try inherit-bg fade-down animate" placeholder="+7 999 189 09 87">
                         </div>
                         <div class="form-control">
-                            <button type="text" class="input__form-try font-regular" id="do-validate">Оценить свой банк бесплатно</button>
+                            <button type="text" class="input__form-try font-regular fade-down animate" id="do-validate">Оценить свой банк бесплатно</button>
                         </div>
                     </div>
                 </div>
@@ -180,9 +154,9 @@
         <div class="left-thumbnail-associated animate" style="background: url('<?= get_stylesheet_directory_uri(); ?>/dist/img/default.png') no-repeat;"></div>
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 offset-xl-6">
-                    <p class="homepage__title animate">Боитесь дефолта банка?</p>
-                    <div class="info__description animate" data-duration="1.5s">
+                <div class="col-xl-6 offset-xl-6 col-lg-6 offset-lg-6">
+                    <p class="homepage__title fade-right animate">Боитесь дефолта банка?</p>
+                    <div class="info__description fade-right animate" data-delay="300">
                         От дефолта не застрахована ни одна финансовая организация.
                         Экономическая нестабильность государства влияет на платежеспособность банков –
                         незастрахованные вклады могут превратиться в пустые цифры, купленные облигации – в
@@ -194,12 +168,12 @@
             </div>
         </div>
     </section>
-    <section class="additional-info info-odd darken-block overflow-y-hidden">
+    <section class="additional-info info-odd darken-block darken-screen overflow-y-hidden">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-xl-6">
-                    <p class="homepage__title lighten-color animate">Как уберечься от рисков?</p>
-                    <div class="info__description animate">
+                <div class="col-xl-6 col-lg-6">
+                    <p class="homepage__title fade-left lighten-color animate">Как уберечься от рисков?</p>
+                    <div class="info__description fade-left animate" data-delay="300">
                         Неплатежеспособность предотвратить сложно, но можно просчитать вероятные риски,
                         найти выход из положения до дефолта. НОРМА – сервис, при помощи которого р
                         ассчитывается вероятность дефолта для любой финансовой организации на территории страны.
@@ -207,22 +181,19 @@
                         выдается развернутый результат с подробным графическим заключением.
                     </div>
                 </div>
-                <div class="col-xl-6">
+                <div class="col-xl-6 col-lg-6">
                     <img class="parallax full-width" data-direction="top" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/mobile.png" alt="Как уберечься от рисков? Иллюстрация">
                 </div>
             </div>
         </div>
     </section>
-    <section class="additional-info lighten-block">
+    <section class="additional-info position-relative lighten-block">
+        <div class="left-thumbnail-associated animate" style="background: url('<?= get_stylesheet_directory_uri(); ?>/dist/img/default-3.png') no-repeat;"></div>
         <div class="container">
             <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-5 info__img"
-                     style="background: url('<?= get_stylesheet_directory_uri(); ?>/dist/img/stat.png') no-repeat 0 center;">
-                </div>
-
-                <div class="col-12 col-xl-6 col-lg-5 offset-xl-1 offset-lg-1 offset-md-1 col-md-8">
-                    <p class="homepage__title animate">Что дает анализ?</p>
-                    <div class="info__description animate">
+                <div class="col-xl-6 offset-xl-6 col-lg-6 offset-lg-6">
+                    <p class="homepage__title fade-right animate">Что дает анализ?</p>
+                    <div class="info__description fade-right animate" data-delay="300">
                         При помощи анализа можно сравнить рыночные показатели, рейтинги компаний,
                         данные по регионам, просчитать вероятность наступления неплатежеспособности банка,
                         отзыва лицензии в ближайшие шесть месяцев. По полученным результатам, клиент ориентируется
@@ -243,34 +214,30 @@
                     <h3 class="homepage__title animate">Как  оценивала Норма дефолтные банки</h3>
                 </div>
                 <div class="col-12">
-                    <div class="prognoses__homepage-subtitle">Вероятность дефолта до отзыва лицензии</div>
+                    <div class="prognoses__homepage-subtitle fade-down animate">Вероятность дефолта до отзыва лицензии</div>
                 </div>
             </div>
             <div class="row bank__row">
-                <div class="col-xl-4 d-flex justify-content-start">
-                    <div class="bank__block danger-risk">
-                        <div class="bank__thumbnail">
-                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/bank1.png" alt="Миниатюра банка">
-                        </div>
-                        <div class="bank__btn-risk">Высокая вероятность дефолта</div>
-                    </div>
-                </div>
-                <div class="col-xl-4 d-flex justify-content-center">
-                    <div class="bank__block danger-risk">
-                        <div class="bank__thumbnail">
-                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/bank2.png" alt="Миниатюра банка">
-                        </div>
-                        <div class="bank__btn-risk">Высокая вероятность дефолта</div>
-                    </div>
-                </div>
-                <div class="col-xl-4 d-flex justify-content-end">
-                    <div class="bank__block warning-risk">
-                        <div class="bank__thumbnail">
-                            <img src="<?= get_stylesheet_directory_uri(); ?>/dist/img/bank3.png" alt="Миниатюра банка">
-                        </div>
-                        <div class="bank__btn-risk">Повышенная вероятность дефолта</div>
-                    </div>
-                </div>
+
+                <?php $args = array(
+                   'numberposts' => 3,
+                   'post_type'   => 'risks',
+                );
+
+                $query = new WP_Query( $args );
+
+                if ( $query->have_posts() ) {
+                    while ( $query->have_posts() ) {
+                        $query->the_post();
+
+                        get_template_part( '/templates/loop', 'risk' );
+                    }
+
+                    wp_reset_postdata();
+                }
+
+                ?>
+
             </div>
         </div>
     </section>
@@ -285,7 +252,7 @@
             <div class="row questions__container">
                 <?php $args = array(
                     'post_type'    => 'questions',
-                    'numbersposts' => 6
+                    'numbersposts' => -1
                 );
 
                 $query = new WP_Query( $args );
@@ -302,6 +269,11 @@
 
                 ?>
             </div>
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="show-more-questions fade-down animate">Показать все вопросы</div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="if-have-questions">
@@ -313,26 +285,26 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <p class="homepage__subtitle animate">Напишите вопрос и мы вам ответим</p>
+                    <p class="homepage__subtitle animate">Напишите его и мы вам ответим</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xl-6 col-lg-8 col-md-10 col-12 offset-0 offset-xl-3 offset-lg-2 offset-md-1 offset-0">
                     <div class="have-questions__form">
                         <div class="form-control d-flex justify-content-center">
-                            <input type="text" class="questions__input" placeholder="Введите имя">
+                            <input type="text" autocomplete="off" name="Имя" class="questions__input fade-down animate" placeholder="Введите имя">
                         </div>
                         <div class="form-control d-flex justify-content-center">
-                            <input type="text" class="questions__input" placeholder="Введите email">
+                            <input type="email" autocomplete="off" name="Email адрес" class="questions__input fade-down animate" placeholder="Введите email">
                         </div>
                         <div class="form-control d-flex justify-content-center">
-                            <input type="tel" class="questions__input" placeholder="Введите телефон">
+                            <input type="tel" autocomplete="off" name="Телефон" class="questions__input fade-down animate" placeholder="Введите телефон">
                         </div>
                         <div class="form-control d-flex justify-content-center">
-                            <textarea type="text" class="questions__textarea" onresize="" placeholder="Введите ваш вопрос"></textarea>
+                            <textarea type="text" autocomplete="off" name="Вопрос" class="questions__textarea fade-down animate" onresize="" placeholder="Введите ваш вопрос"></textarea>
                         </div>
                         <div class="form-control d-flex justify-content-center">
-                            <button type="text" class="questions__button font-regular">Узнать ответ на мой вопрос</button>
+                            <button type="text" class="questions__button font-regular fade-down animate">Узнать ответ на мой вопрос</button>
                         </div>
                     </div>
                 </div>
@@ -349,7 +321,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="about-us__subtitle animate">
+                    <div class="about-us__subtitle fade-down animate">
                         Наша команда – создатели сервиса НОРМА, который просчитывает вероятность неплатежеспособности,
                         помогает клиентам уберечься от убытков и сохранить капитал. Каждый из участников совершенствует
                         определенную часть программы – модели секторов, оценки и рейтинги, дорабатывает заключения,

@@ -11,7 +11,7 @@
 @import "footer";
 @import "media";
 @import "animation";
-
+@import "404";
 
 body {
   overflow-x: hidden;
@@ -23,6 +23,14 @@ body {
 .page__content {
   margin-top: $inner-content-margin;
 }
+button {
+  &:hover {
+    background: $btn-hover-color;
+  }
+}
+.inherit-bg {
+  background: none;
+}
 .btn {
   display: inline-block;
   padding: $btn-padding;
@@ -30,6 +38,10 @@ body {
   font-size: $btn-font-size;
   font-weight: $btn-font-weight;
   border-radius: $btn-border-radius;
+  transition: $transition-base;
+  &:hover {
+    background: $btn-hover-color;
+  }
 }
 .btn-white {
   background: #fff;
@@ -125,6 +137,7 @@ button {
   transition: all .3s ease-in-out;
   border: 1px solid red;
   position: relative;
+  color: red;
   &::placeholder {
     color: red;
   }
@@ -134,6 +147,10 @@ button {
 }
 .bounce {
   animation: bounce .3s ease-in-out forwards;
+}
+.fade-down {
+  transform: translateY(50px);
+  opacity: 0;
 }
 @keyframes bounce {
   from {

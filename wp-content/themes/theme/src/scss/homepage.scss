@@ -13,18 +13,6 @@
   opacity: 0;
   transform: translateY(-10px);
 }
-.additional-info {
-  .info__description {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  &:nth-child(2) {
-    .info__description {
-      transform: translateX(60px);
-    }
-  }
-}
-
 .homepage__description {
   font-size: 16px;
   line-height: 16px;
@@ -36,7 +24,7 @@
 
   transition: $header-transition;
   opacity: 0;
-  transform: translate(70px, -80px);
+  transform: translateY(-60px);
 }
 .form-control {
   margin-bottom: 14px;
@@ -55,6 +43,10 @@
   height: 218px;
   border-radius: 4px;
   margin-top: 109px;
+
+  &:hover {
+    outline-width: 2px;
+  }
 }
 .bank__thumbnail {
   height: 140px;
@@ -66,9 +58,9 @@
   }
 }
 .bank__btn-risk {
-  width: 262px;
+  width: 266px;
   height: 51px;
-  transform: translateX(-1px);
+  transform: translateX(-2px);
   background: #ffffff;
   font-weight: bold;
   font-size: 13px;
@@ -79,13 +71,13 @@
   align-items: center;
 }
 .danger-risk {
-  border: 1px solid $primary-color;
+  outline: 1px solid $primary-color;
   .bank__btn-risk {
     color: $primary-color;
   }
 }
 .warning-risk {
-  border: 1px solid #FFA979;
+  outline: 1px solid #FFA979;
   .bank__btn-risk {
     color: #FFA979;
   }
@@ -94,9 +86,17 @@
   margin-top: 45px;
 }
 .why-us-screen {
-  margin-top: 10vh;
+  margin-top: 30vh;
   background: #141414;
   padding-bottom: 90px;
+  position: relative;
+  &::after {
+    content: url('/wp-content/themes/theme/dist/img/arorw-down-section.png');
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .why-us__block--animated {
   transition: $header-transition;
@@ -126,11 +126,19 @@
   position: absolute;
   top: 20px;
   right: -80px;
-  animation: pen linear 1s forwards;
   z-index: -1;
 }
+.scroll-down__arrow {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .transformation-screen {
-  transform: translateY(-20%);
+  transform: translateY(-50%);
+}
+.pen-animated {
+  animation: pen linear 1s forwards;
 }
 @keyframes pen {
   0% {
@@ -232,9 +240,70 @@
 .questions__container {
   margin-top: 85px;
 }
-.block-question {
-  margin-bottom: 96px;
+.show-more-questions {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 30px;
+  position: relative;
+  margin-bottom: 80px;
+  cursor: pointer;
+  &::after {
+    content: url('/wp-content/themes/theme/dist/img/arrow-down.png');
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
+
+.block-question {
+  display: none;
+  max-height: 0;
+  overflow-y: hidden;
+  margin-bottom: 50px;
+  transition: all .3s linear;
+  opacity: 0;
+  &:nth-child(1) {
+    display: block;
+    opacity: 1;
+    max-height: 100em;
+    margin-bottom: 50px;
+  }
+  &:nth-child(2) {
+    display: block;
+    opacity: 1;
+    max-height: 100em;
+    margin-bottom: 50px;
+  }
+  &:nth-child(3) {
+    display: block;
+    opacity: 1;
+    max-height: 100em;
+    margin-bottom: 50px;
+  }
+}
+.visible-question {
+  display: block;
+  margin-bottom: 0;
+  opacity: 1;
+  transform: translateY(-60px);
+  animation: questions-fade 1s .1s forwards;
+}
+
+@keyframes questions-fade {
+  10% {
+    display: block;
+    margin-bottom: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+    max-height: 100em;
+    transform: translateY(0);
+    margin-bottom: 50px;
+  }
+}
+
 .additional-info {
   min-height: 400px;
   padding: 80px 0;
@@ -305,6 +374,10 @@
   transform: translateX(60px);
   opacity: 0;
 }
+.fade-left {
+  transform: translateX(-60px);
+  opacity: 0;
+}
 
 .about-us {
   border-top: 4px solid #141414;
@@ -362,4 +435,12 @@
   font-size: 16px;
   line-height: 16px;
   text-align: center;
+}
+
+
+
+
+.current-date {
+  display: flex;
+  align-items: center;
 }

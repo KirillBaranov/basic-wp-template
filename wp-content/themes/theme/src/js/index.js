@@ -1,6 +1,6 @@
 import './input'
 import './scroll'
-import './animation'
+import './menu'
 import './animate'
 import './validation'
 //import './timer'
@@ -14,11 +14,24 @@ $(document).ready(() => {
     });
 
     input.blur( function () {
-        //$(this).unmask();
-        console.log( $(this).val().length );
-
         if ( $(this).val().length < 16 ) {
             $(this).val( '' );
         }
-    })
+    });
+
+
+    /**
+     * Block for showing full question list.
+     * @type {jQuery.fn.init|jQuery|HTMLElement}
+     */
+    const showMoreQuestions = $('.show-more-questions');
+
+    showMoreQuestions.click( () => {
+        const questionsContainer = $('.questions__container');
+        const blocks             = questionsContainer.find('.block-question');
+        $('.show-more-questions').fadeOut();
+
+        blocks.addClass('visible-question');
+    });
+
 });

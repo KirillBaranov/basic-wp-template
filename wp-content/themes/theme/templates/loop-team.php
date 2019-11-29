@@ -1,6 +1,6 @@
 <?php $src = get_the_post_thumbnail_url( $post->ID, 'full' ); ?>
 
-<div class="col-xl-4">
+<div class="col-xl-4 fade-down animate">
     <div class="membership__block d-flex flex-column align-items-center">
         <div class="membership__thumbnail full-width"
              style="background: url('<?= $src; ?>')

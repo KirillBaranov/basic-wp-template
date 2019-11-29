@@ -12,6 +12,10 @@
   }
 }
 @media (max-width: 1200px) {
+  .left-thumbnail-associated {
+    left: -130px;
+    min-height: 415px;
+  }
   .pen__scroller {
     top: -120px;
     right: 30px;
@@ -26,6 +30,18 @@
 }
 
 @media (max-width: 991px) {
+  .left-thumbnail-associated {
+    display: none;
+  }
+  .parallax {
+    display: none;
+  }
+  .prognoses-firms {
+    padding: 42px 0 133px 0;
+  }
+  .try-product {
+    padding: 115px 0 35px 0;
+  }
   .homepage__title {
     font-size: 28px;
   }
@@ -56,12 +72,37 @@
 }
 
 @media (max-width: 768px) {
+
+  .why-us-screen {
+    margin-top: 55vh;
+  }
+  .why-us__title {
+    margin-top: -150px;
+  }
   .homepage__screen {
     padding-top: 240px;
+  }
+  .why-us-screen  {
+    margin-top: 55vh;
+  }
+  .try-product {
+    margin-bottom: 0;
+  }
+  .questions__container {
+    margin-top: 55px;
+  }
+  .pen__scroller {
+    display: none;
   }
 }
 
 @media (max-width: 576px) {
+  .why-us__title {
+    margin-top: -50px;
+  }
+  .why-us-screen {
+    margin-top: 30vh;
+  }
   .left-thumbnail-associated {
     display: none;
   }

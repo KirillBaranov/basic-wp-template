@@ -3,7 +3,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700&display=swap" rel="stylesheet">
 
@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row justify-content-between">
             <a href="/" class="d-block col-1 header__logo animate-instanse">
-                <img width="81" height="31" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/logo.png" alt="Логотип norma-a3">
+                <img width="81" height="31" id="logo" src="<?= get_stylesheet_directory_uri(); ?>/dist/img/logo.png" alt="Логотип norma-a3">
             </a>
             <div class="col d-xl-flex d-none justify-content-end align-items-center">
                 <?php $args = array(

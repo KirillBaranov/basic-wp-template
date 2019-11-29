@@ -1,0 +1,15 @@
+.page-404 {
+  padding-top: 154px;
+}
+.btn__404 {
+  width: 272px;
+  height: 41px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  &:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
